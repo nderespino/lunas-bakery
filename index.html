@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catch Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div class='start-screen' style='display:block'>
+      <h2 class='title' style='padding-top: 200px;'>Catch Game</h2>
+      <button id='toggleButton' onclick='startGame()'>Start Game</button>
+    </div>
+  <div class='startOverScreen' style='display:none'>
+      <h2 class='title' style='padding-top: 200px;'>Game Over</h2>
+      <button id="startOverButton" onclick='restartGame()'>Play Again</button>
+    </div>
+  <div class="game">
+    <div class="score">
+      <p id="score"> Score</p>
+
+    </div>
+    <div class="character"></div>
+    <div class="fruits"></div>
+    <div class="badFruits"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
