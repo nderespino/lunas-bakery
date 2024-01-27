@@ -2,6 +2,8 @@ let game = document.querySelector(".game");
 let character = document.querySelector(".character");
 let fruits = document.querySelector(".fruits");
 let badFruits = document.querySelector(".badFruits");
+let fruitsPic = document.querySelector('img[name="fruitsPic"]');
+let badFruitsPic = document.querySelector('img[name="badFruitsPic"]');
 let score = 0;
 let charLeft = parseInt(window.getComputedStyle(character).getPropertyValue("left"));
 let charBottom = parseInt(window.getComputedStyle(character).getPropertyValue("bottom"));
@@ -43,12 +45,24 @@ function generateFruit() {
   // Create a new fruit and set its initial position
   let fruitBottom = 470;
   let fruitLeft = Math.floor(Math.random() * 450);
-  let fruit = document.createElement('div');
+  let imagesArray= [ "images/pixel-spritetest.jpg","images/sans.png","images/sprite-test.jpg"];
+
+
+ //randomize images array for falling fruit
+let num = Math.floor(Math.random() * (imagesArray.length));
+document.fruitsPic.src = imagesArray[num];
+ 
+ 
+ let fruit = document.createElement('div');
+ let newImage = document.createElement('img');
   fruit.style.bottom = fruitBottom + 'px';
   fruit.style.left = fruitLeft + 'px';
   fruit.setAttribute("class", "fruit");
+  newImage.setAttribute("src", imagesArray[num]);
+  fruit.appendChild(newImage);
   fruits.appendChild(fruit);
-
+  
+  
   //function for fruit to fall down to be caught by player and add score(inside generatefruit function)
   function fallDownFruit() {
     fruitBottom -= 5;
@@ -60,7 +74,11 @@ function generateFruit() {
       score++;
       setScore(score);
     }
+
+    
   }
+
+
 
   let fallInterval = setInterval(fallDownFruit, 20);
 
@@ -71,13 +89,18 @@ function generateFruit() {
 //copied functions for bad fruit attributes
 function generateBadFruit() {
   // Create a new bad fruit and set its initial position
+  let badFruitPic = "images/pixel-test-bomb.jpg"
   let badFruitBottom = 470;
   let badFruitLeft = Math.floor(Math.random() * 450);
   let badFruit = document.createElement('div');
+  let newBadImage = document.createElement('img');
   badFruit.style.bottom = badFruitBottom + 'px';
   badFruit.style.left = badFruitLeft + 'px';
   badFruit.setAttribute("class", "badFruit");
+  newBadImage.setAttribute("src", badFruitPic);
+  badFruit.appendChild(newBadImage);
   badFruits.appendChild(badFruit);
+  
 
   function fallDownBadFruit() {
     badFruitBottom -= 5;

@@ -44,21 +44,33 @@
   
   .character {
     width: 50px;
-    height: 50px;
-    background-color: black;
+    height: 55px;
     position: absolute;
     bottom: 0;
     left: calc(50% - 25px);
   
   
   }
+
+  .character img{
+    width: 100%;
+  }
   
   .fruit {
     width: 30px;
     height: 30px;
-    background-color: green;
     position: absolute;
   }
+
+  .fruits img{
+    width: 30px;
+  }
+
+  .fruitsImg {
+    display: none;
+  }
+
+  
   
   .badFruit {
     width: 30px;
@@ -66,6 +78,16 @@
     background-color: red;
     position: absolute;
   }
+  .badFruitsImg{
+    width: 30px;
+    display: none;
+  }
+
+  .badFruits img{
+    width: 30px;
+  }
+
+
   
   p {
     font-size: 20px;
