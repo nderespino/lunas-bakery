@@ -9,20 +9,24 @@
 </head>
 
 <body>
-<div class='start-screen' style='display:block'>
-      <h2 class='title' style='padding-top: 200px;'>Catch Game</h2>
+
+  <div class="game">
+    <div class='start-screen' style='display:block'>
+      <h1 class='title'>Luna's Bakery</h1>
       <button id='toggleButton' onclick='startGame()'>Start Game</button>
+      <img src="images/Untitled_Artwork.png">
     </div>
   <div class='startOverScreen' style='display:none'>
-      <h2 class='title' style='padding-top: 200px;'>Game Over</h2>
+      <h1 class='title' style='padding-top: 200px;'>Game Over</h1>
       <button id="startOverButton" onclick='restartGame()'>Play Again</button>
+      <img src="images/Untitled_Artwork.png">
+     
     </div>
-  <div class="game">
     <div class="score">
       <p id="score"> Score</p>
 
     </div>
-    <div class="character"><img src="./images/sans.png"></div>
+    <div class="character"><img src="./images/luna.PNG"></div>
     <div class="fruits"></div>
     <img class='fruitsImg' src="images/pixel-spritetest.jpg" name="fruitsPic"/>
     <div class="badFruits"></div>

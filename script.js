@@ -43,8 +43,8 @@ document.addEventListener("keydown", control);
 //function to generate fruit at random
 function generateFruit() {
   // Create a new fruit and set its initial position
-  let fruitBottom = 470;
-  let fruitLeft = Math.floor(Math.random() * 450);
+  let fruitBottom = 570;
+  let fruitLeft = Math.floor(Math.random() * 550);
   let imagesArray= [ "images/pixel-spritetest.jpg","images/sans.png","images/sprite-test.jpg"];
 
 
@@ -52,7 +52,7 @@ function generateFruit() {
 let num = Math.floor(Math.random() * (imagesArray.length));
 document.fruitsPic.src = imagesArray[num];
  
- 
+ // create new elements and append to original "fruit", append image array to new element so it falls
  let fruit = document.createElement('div');
  let newImage = document.createElement('img');
   fruit.style.bottom = fruitBottom + 'px';
@@ -68,7 +68,7 @@ document.fruitsPic.src = imagesArray[num];
     fruitBottom -= 5;
     fruit.style.bottom = fruitBottom + 'px';
     fruit.style.left = fruitLeft + 'px';
-    if (fruitBottom < charBottom + 40 && fruitBottom > charBottom && fruitLeft > charLeft - 30 && fruitLeft < charLeft + 80) {
+    if (fruitBottom < charBottom + 100 && fruitBottom > charBottom && fruitLeft > charLeft - 60 && fruitLeft < charLeft + 150) {
       fruits.removeChild(fruit);
       clearInterval(fallInterval); // Make sure to clear the interval after the fruit is removed
       score++;
@@ -90,8 +90,8 @@ document.fruitsPic.src = imagesArray[num];
 function generateBadFruit() {
   // Create a new bad fruit and set its initial position
   let badFruitPic = "images/pixel-test-bomb.jpg"
-  let badFruitBottom = 470;
-  let badFruitLeft = Math.floor(Math.random() * 450);
+  let badFruitBottom = 570;
+  let badFruitLeft = Math.floor(Math.random() * 550);
   let badFruit = document.createElement('div');
   let newBadImage = document.createElement('img');
   badFruit.style.bottom = badFruitBottom + 'px';
@@ -106,7 +106,7 @@ function generateBadFruit() {
     badFruitBottom -= 5;
     badFruit.style.bottom = badFruitBottom + 'px';
     badFruit.style.left = badFruitLeft + 'px';
-    if (badFruitBottom < charBottom + 40 && badFruitBottom > charBottom && badFruitLeft > charLeft - 30 && badFruitLeft < charLeft + 80) {
+    if (badFruitBottom < charBottom + 100 && badFruitBottom > charBottom && badFruitLeft > charLeft - 10 && badFruitLeft < charLeft + 80) {
       badFruits.removeChild(badFruit);
       clearInterval(fallInterval); // Make sure to clear the interval after the fruit is removed
       setScore(0); // Reset the score to 0

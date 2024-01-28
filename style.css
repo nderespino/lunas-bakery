@@ -1,6 +1,12 @@
 * {
     padding: 0;
     margin: 0;
+    
+  }
+
+  @font-face {
+    font-family: '04B_30__';
+    src: url('/images/04B_30__.TTF');
   }
   
   body {
@@ -9,22 +15,107 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: '04B_30__';
+    color: #422800;
+    background-color: #231409
   }
+
+   
+
+  .start-screen h1{
+    padding-bottom: 30px;
+    color: pink;
+    font-size: 50px;
+    width: 200px;
+    margin-left: 180px;
+    margin-top: 180px;
+    text-align: center;
+    animation: fall-in 1s forwards;
+  }
+
+  .startOverScreen h1{
+    padding-bottom: 30px;
+    color: pink;
+    font-size: 40px;
+  }
+
+  @keyframes fall-in{
+    from{transform: translateY(-400px);}
+    to{transform: translateY(0);}
+
+  }
+
+  button{
+  background-color: pink;
+  font-family: '04B_30__';
+  border: 2px solid #422800;
+  border-radius: 30px;
+  box-shadow: #422800 4px 4px 0 0;
+  color: #422800;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 0 18px;
+  line-height: 50px;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.start-screen button{
+  animation: fall-in 1s forwards;
+}
+
+button:active{
+  background-color: rgb(237, 174, 184);
+
+}
+
+
   
   .start-screen {
-    width: 500px;
-    height: 500px;
-    background-color:#F28F3B;
+    width: 600px;
+    height: 600px;
     margin: auto;
     position: absolute;
     z-index: 999;
     text-align: center;
+    
+    }
+
+  
+
+    .start-screen img{
+      width: 650px;
+      height: 600px;
+      position: absolute;
+      z-index: -1;
+      top: 5;
+      right: 0;
+      bottom: 0;
+      
+      
+    }
+
+    .startOverScreen img{
+      width: 650px;
+      height: 600px;
+      position: absolute;
+      z-index: -1;
+      top: 5;
+      right: 0;
+      bottom: 0;
+      
+      
     }
   
   
   .startOverScreen {
-    width: 500px;
-    height: 500px;
+    width: 600px;
+    height: 600px;
     background-color: #F28F3B;
     margin: auto;
     position: absolute;
@@ -34,17 +125,18 @@
   }
   
   .game {
-    width: 500px;
-    height: 500px;
+    width: 600px;
+    height: 600px;
     border: 2px solid black;
     margin: auto;
     position: relative;
     overflow: hidden;
+    background-color: white;
   }
   
   .character {
-    width: 50px;
-    height: 55px;
+    width: 150px;
+    height: 150px;
     position: absolute;
     bottom: 0;
     left: calc(50% - 25px);
@@ -57,13 +149,13 @@
   }
   
   .fruit {
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     position: absolute;
   }
 
   .fruits img{
-    width: 30px;
+    width: 40px;
   }
 
   .fruitsImg {
@@ -73,18 +165,18 @@
   
   
   .badFruit {
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     background-color: red;
     position: absolute;
   }
   .badFruitsImg{
-    width: 30px;
+    width: 40px;
     display: none;
   }
 
   .badFruits img{
-    width: 30px;
+    width: 40px;
   }
 
 
