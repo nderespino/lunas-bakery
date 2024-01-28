@@ -6,7 +6,7 @@
 
   @font-face {
     font-family: '04B_30__';
-    src: url(https://github.com/nderespino/lunas-bakery/blob/main/images/04B_30__.TTF);
+    src: url('/images/04B_30__.TTF');
   }
   
   body {
