@@ -128,20 +128,25 @@ button:active{
     width: 600px;
     height: 600px;
     border: 2px solid black;
-    margin: auto;
     position: relative;
     overflow: hidden;
-    background-color: white;
   }
   
   .character {
     width: 150px;
     height: 150px;
     position: absolute;
+    justify-content: center;
     bottom: 0;
-    left: calc(50% - 25px);
+    left: calc(50% - 80px);
   
   
+  }
+  .background {
+    width: 600px;
+    height: 650px;
+    margin-top: -50px;
+    z-index: -1;
   }
 
   .character img{
@@ -152,6 +157,12 @@ button:active{
     width: 40px;
     height: 40px;
     position: absolute;
+  }
+
+  #score{
+    position: relative;
+    color: pink;
+    z-index: 1;
   }
 
   .fruits img{

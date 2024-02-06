@@ -9,6 +9,8 @@ let charLeft = parseInt(window.getComputedStyle(character).getPropertyValue("lef
 let charBottom = parseInt(window.getComputedStyle(character).getPropertyValue("bottom"));
 let charTop = parseInt(window.getComputedStyle(character).getPropertyValue("top"));
 let gameStart = document.querySelector('.start-screen');
+let catchSound = new Audio('images/catch-sound.mp3');
+let backgroundSound = new Audio("images/b-8bit-song.mp3");
 //let fruitBottom = parseInt(window.getComputedStyle(fruits).getPropertyValue("bottom"));
 let running = false;
 
@@ -69,10 +71,11 @@ document.fruitsPic.src = imagesArray[num];
     fruit.style.bottom = fruitBottom + 'px';
     fruit.style.left = fruitLeft + 'px';
     if (fruitBottom < charBottom + 100 && fruitBottom > charBottom && fruitLeft > charLeft - 60 && fruitLeft < charLeft + 150) {
-      fruits.removeChild(fruit);
+    fruits.removeChild(fruit);
       clearInterval(fallInterval); // Make sure to clear the interval after the fruit is removed
       score++;
       setScore(score);
+      catchSound.play();
     }
 
     
@@ -106,7 +109,7 @@ function generateBadFruit() {
     badFruitBottom -= 5;
     badFruit.style.bottom = badFruitBottom + 'px';
     badFruit.style.left = badFruitLeft + 'px';
-    if (badFruitBottom < charBottom + 100 && badFruitBottom > charBottom && badFruitLeft > charLeft - 10 && badFruitLeft < charLeft + 80) {
+    if (badFruitBottom < charBottom + 100 && badFruitBottom > charBottom && badFruitLeft > charLeft - 10 && badFruitLeft < charLeft + 100) {
       badFruits.removeChild(badFruit);
       clearInterval(fallInterval); // Make sure to clear the interval after the fruit is removed
       setScore(0); // Reset the score to 0
@@ -135,6 +138,7 @@ var x = document.querySelector(".start-screen");
   }
   }
   function startGame() {
+    backgroundSound.play();
     toggleStartScreen();
   if (running) {
     running = false; 
@@ -158,9 +162,14 @@ function toggleRestartGame() {
 //restarts the functions that allow the fruits to generate
 function restartGame() {
   toggleRestartGame();
-  running = true;
+  if (running) {
+    running = false; 
+  }
+  else {
+    running = true;
     generateFruit();
     generateBadFruit();
+}
 }
 
 
